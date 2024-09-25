@@ -1,0 +1,43 @@
+.header-thin {
+  font-weight: 100;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.narrowed-text {
+  width: 50%;
+  font-size: 18px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.reg-button {
+  margin-top: 10px;
+  font-size: 1.25rem;
+  border: none;
+  height: 40px;
+  width: 120px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.sign-up {
+  background-color: #005ef5;
+  color: white;
+  font-size: 1.25rem;
+}
+
+.about {
+  background-color: #bfdbf7;
+  color: black;
+}

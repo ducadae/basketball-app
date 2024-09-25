@@ -1,32 +1,29 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { NavComponent } from './nav/nav.component';
+import { AccountService } from './_services/account.service';
+import { HomeComponent } from './home/home.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NavComponent, HomeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
-  //to inject in the app.component
-  http = inject(HttpClient);
+  private accountService = inject(AccountService);
   title = 'Basketball App';
-  players: any;
 
   //connects to the API server
   ngOnInit(): void {
-    //this HTTP object is an observable. Observables must be subscribed to
-    this.http.get('https://localhost:5001/api/players').subscribe({
-      //next: what to do if the observable HAS the value
-      next: (response) => (this.players = response),
+    this.setCurrentUser();
+  }
 
-      //error: handles an error if the observable DOES NOT have the value
-      error: (error) => console.log(error),
-
-      //complete: what happens when the observable has no more values to return
-      complete: () => console.log('Request has completed'),
-    });
+  setCurrentUser() {
+    const userString = localStorage.getItem('user');
+    if (!userString) return;
+    const user = JSON.parse(userString);
+    this.accountService.currentUser.set(user);
   }
 }

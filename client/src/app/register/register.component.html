@@ -1,0 +1,28 @@
+<div class="container">
+  <form #registerForm="ngForm" (ngSubmit)="register()">
+    <h2 class="header-thin">Sign Up</h2>
+    <hr />
+    <div class="form-input-combo user-input">
+      <input
+        class="input-box"
+        type="text"
+        name="username"
+        [(ngModel)]="model.username"
+        placeholder="Username"
+      />
+    </div>
+    <div class="form-input-combo pass-input">
+      <input
+        class="input-box"
+        type="password"
+        name="password"
+        [(ngModel)]="model.password"
+        placeholder="Password"
+      />
+    </div>
+    <div class="btn-container">
+      <button class="reg-button register" type="submit">Register</button>
+      <button class="reg-button cancel" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+</div>

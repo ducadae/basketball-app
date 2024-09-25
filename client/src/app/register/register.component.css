@@ -1,0 +1,92 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.header-thin {
+  font-weight: 100;
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #005ef5;
+}
+
+.form-input-combo {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-box {
+  background-color: white;
+  color: #333;
+  border: 1px solid #999;
+  width: 25rem;
+  height: 32px;
+  padding: 1rem 0.75rem;
+  padding-left: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  right: 0;
+}
+
+.user-input {
+  margin-top: 20px;
+}
+
+.user-input .input-box {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+:focus {
+  outline: none;
+  z-index: 1;
+  box-shadow: 0 0 3px 3px hsla(217, 100%, 48%, 55%);
+}
+
+.pass-input .input-box {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: 1px;
+}
+
+.reg-button {
+  margin-top: 10px;
+  font-size: 18px;
+  border: none;
+  height: 40px;
+  width: 120px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.register {
+  background-color: #0ead69;
+  color: white;
+}
+
+.cancel {
+  background-color: #eee;
+  color: black;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+hr {
+  text-align: center;
+  width: 26rem;
+  border: solid 1px #ddd;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 1rem;
+}

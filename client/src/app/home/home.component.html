@@ -1,0 +1,30 @@
+<div class="container text-align-center">
+  <div>
+    @if (!registerMode){
+    <h1 class="header-thin">BUILD A DYNASTY.</h1>
+
+    <p class="narrowed-text">
+      Choose from one of 32 teams. Take a small market team to glory. Or,
+      dominate the league with a big market powerhouse. Draft prospects, develop
+      them through comprehensive training programs. Trade players without salary
+      restrictions. Sign free agents while staying under the hard salary cap.
+      <br />
+      Sign up now!
+    </p>
+    <div>
+      <button class="reg-button sign-up" (click)="registerToggle()">
+        Sign up
+      </button>
+      <button class="reg-button about">About</button>
+    </div>
+    } @else {
+    <div class="container">
+      <div>
+        <div>
+          <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>

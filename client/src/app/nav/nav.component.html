@@ -1,0 +1,44 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="left-container">
+      <a class="home-logo" href="#">Basketball Simulation League</a>
+      @if (accountService.currentUser()){
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a class="">Teams</a>
+        </li>
+        <li class="">
+          <a class="">Players</a>
+        </li>
+        <li class="">
+          <a class="">Settings</a>
+        </li>
+      </ul>
+      }
+    </div>
+
+    <div class="nav-form-box right-container">
+      <form #loginform="ngForm" (ngSubmit)="login()" class="d-flex">
+        @if (!accountService.currentUser()) {
+        <input
+          name="username"
+          [(ngModel)]="model.username"
+          class="input-box"
+          placeholder="Username"
+        />
+        <input
+          name="password"
+          [(ngModel)]="model.password"
+          class="user-password input-box"
+          placeholder="Password"
+          type="password"
+        />
+        } @if (!accountService.currentUser()) {
+        <button class="login" type="submit">Log In</button>
+        } @if (accountService.currentUser()){
+        <button class="login" (click)="logout()" type="button">Log Out</button>
+        }
+      </form>
+    </div>
+  </div>
+</nav>
